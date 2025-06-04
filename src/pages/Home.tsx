@@ -7,8 +7,7 @@ import {
   useSpring, 
   useInView,
   useMotionValue,
-  useAnimation,
-  AnimatePresence
+  useAnimation
 } from 'framer-motion';
 
 // Add Google Fonts
@@ -29,10 +28,10 @@ const useParallax = (value: any, distance: number) => {
   return useTransform(value, [0, 1], [-distance, distance]);
 };
 
-const useScrollAnimation = (threshold = 0.1) => {
+const useScrollAnimation = (thresholdValue = 0.1) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { 
-    threshold, 
+    amount: thresholdValue,
     once: false,
     margin: "-100px 0px" 
   });
@@ -692,7 +691,7 @@ const ValueCard = styled(motion.div)<{ hoverColor?: string }>`
   }
 `;
 
-const ValueIcon = styled.div<{ iconColor?: string }>`
+const ValueIcon = styled(motion.div)<{ iconColor?: string }>`
   font-size: 3rem;
   margin-bottom: 1.5rem;
   color: ${props => props.iconColor || props.theme.colors.accent};
@@ -1252,11 +1251,11 @@ const Home: React.FC = () => {
   
   // Animation controls for sections
   const { ref: statsRef, controls: statsControls, isInView: statsInView } = useScrollAnimation(0.2);
-  const { ref: valuesRef, controls: valuesControls, isInView: valuesInView } = useScrollAnimation(0.1);
-  const { ref: servicesRef, controls: servicesControls, isInView: servicesInView } = useScrollAnimation(0.1);
-  const { ref: testimonialsRef, controls: testimonialsControls, isInView: testimonialsInView } = useScrollAnimation(0.1);
-  const { ref: projectsRef, controls: projectsControls, isInView: projectsInView } = useScrollAnimation(0.1);
-  const { ref: ctaRef, controls: ctaControls, isInView: ctaInView } = useScrollAnimation(0.2);
+  const { ref: valuesRef, controls: valuesControls } = useScrollAnimation(0.1);
+  const { ref: servicesRef, controls: servicesControls } = useScrollAnimation(0.1);
+  const { ref: testimonialsRef, controls: testimonialsControls } = useScrollAnimation(0.1);
+  const { ref: projectsRef, controls: projectsControls } = useScrollAnimation(0.1);
+  const { ref: ctaRef, controls: ctaControls } = useScrollAnimation(0.2);
 
   const values = [
     {

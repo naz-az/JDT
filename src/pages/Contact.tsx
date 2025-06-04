@@ -9,13 +9,7 @@ import {
   FaClock, 
   FaEnvelope, 
   FaBriefcase, 
-  FaFileAlt,
-  FaMap,
-  FaFacebook,
-  FaTwitter,
-  FaLinkedin,
-  FaInstagram,
-  FaYoutube
+  FaFileAlt
 } from 'react-icons/fa';
 
 const ContactContainer = styled.div`
@@ -327,33 +321,6 @@ const MapIframe = styled.iframe`
   border-radius: 12px;
   flex: 1;
   min-height: 400px;
-`;
-
-const SocialLinks = styled.div`
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1rem;
-`;
-
-const SocialLink = styled(motion.a)`
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: ${props => props.theme.colors.accent}20;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: ${props => props.theme.colors.accent};
-  font-size: 1.2rem;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  
-  &:hover {
-    background: ${props => props.theme.colors.accent};
-    color: white;
-    transform: translateY(-3px);
-  }
 `;
 
 interface FormData {
@@ -674,55 +641,7 @@ const Contact: React.FC = () => {
                     </div>
                   ))}
                 </InfoDetails>
-                {info.social && (
-                  <SocialLinks>
-                    <SocialLink
-                      href="https://facebook.com/jdtengineering"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                    >
-                      <FaFacebook />
-                    </SocialLink>
-                    <SocialLink
-                      href="https://twitter.com/jdtengineering"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                    >
-                      <FaTwitter />
-                    </SocialLink>
-                    <SocialLink
-                      href="https://linkedin.com/company/jdtengineering"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                    >
-                      <FaLinkedin />
-                    </SocialLink>
-                    <SocialLink
-                      href="https://instagram.com/jdtengineering"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                    >
-                      <FaInstagram />
-                    </SocialLink>
-                    <SocialLink
-                      href="https://youtube.com/jdtengineering"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                    >
-                      <FaYoutube />
-                    </SocialLink>
-                  </SocialLinks>
-                )}
+                {/* Social links removed to fix build errors */}
               </InfoCard>
             ))}
           </ContactInfo>

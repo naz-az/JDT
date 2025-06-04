@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { AnimatePresence } from 'framer-motion';
@@ -60,7 +60,7 @@ const darkTheme: Theme = {
 };
 
 // Global styles
-const GlobalStyle = createGlobalStyle<{ theme: Theme }>`
+const GlobalStyle = createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
